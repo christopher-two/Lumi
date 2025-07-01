@@ -11,10 +11,14 @@ espressoCore = "3.6.1"
 kotlinxCoroutinesCore = "1.10.2"
 kotlinxCoroutinesAndroid = "1.10.2"
 kotlinxCoroutinesPlayServices = "1.10.2"
+kotlinxSerializationJson = "1.9.0"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2025.06.01"
 koin = "4.1.0"
+richtextCommonmark = "0.20.0"
+richtextUi = "1.0.0-alpha02"
+richtextUiMaterial3 = "0.20.0"
 textRecognition = "16.0.1"
 
 [libraries]
@@ -44,6 +48,10 @@ koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compos
 kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinxCoroutinesPlayServices" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+richtext-commonmark = { module = "com.halilibo.compose-richtext:richtext-commonmark", version.ref = "richtextCommonmark" }
+richtext-ui = { module = "com.halilibo.compose-richtext:richtext-ui", version.ref = "richtextUi" }
+richtext-ui-material3 = { module = "com.halilibo.compose-richtext:richtext-ui-material3", version.ref = "richtextUiMaterial3" }
 text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "textRecognition" }
 
 [plugins]

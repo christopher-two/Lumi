@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization") version "2.2.0"
 }
 
 android {
@@ -72,6 +73,14 @@ dependencies {
 
     //Accompanist
     implementation(libs.accompanist.permissions)
+
+    //Utils
+    implementation(libs.richtext.ui.material3)
+    implementation(libs.richtext.ui)
+    implementation("com.github.jeziellago:compose-markdown:0.2.8")
+    
+    //KotlinX
+    implementation(libs.kotlinx.serialization.json)
 
     //Test
     androidTestImplementation(platform(libs.androidx.compose.bom))
