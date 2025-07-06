@@ -1,22 +1,28 @@
 package org.christophertwo.qr
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme.colorScheme
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
-import org.christophertwo.qr.ui.screen.scanner.QrScannerRoot
+import androidx.annotation.RequiresApi
+import org.christophertwo.qr.ui.screen.generator.QrGeneratorRoot
+import org.christophertwo.qr.ui.screen.generator.QrGeneratorViewModel
+import org.christophertwo.qr.ui.screen.start.StartRoot
 import org.christophertwo.qr.ui.theme.QrTheme
 
+@RequiresApi(Build.VERSION_CODES.S)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            QrTheme(dynamicColor = true) { QrScannerRoot() }
+            QrTheme(
+                dynamicColor = false,
+                darkTheme = false
+            ) {
+                StartRoot()
+            }
         }
     }
 }

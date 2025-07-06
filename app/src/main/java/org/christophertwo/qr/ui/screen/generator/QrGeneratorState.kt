@@ -4,5 +4,6 @@ import androidx.compose.runtime.*
 
 @Immutable
 data class QrGeneratorState(
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    val content: String = "",
 )

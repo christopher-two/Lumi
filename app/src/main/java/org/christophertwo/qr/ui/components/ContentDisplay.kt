@@ -24,12 +24,13 @@ import org.christophertwo.qr.utils.parseSms
 import org.christophertwo.qr.utils.parseVCard
 import org.christophertwo.qr.utils.parseWiFi
 
+private val prettyJson = Json { prettyPrint = true }
+
 @Composable
 fun JsonContentDisplay(content: String) {
     runCatching {
         val jsonElement = Json.parseToJsonElement(content)
-        Json { prettyPrint = true }
-            .encodeToString(JsonElement.serializer(), jsonElement)
+        prettyJson.encodeToString(JsonElement.serializer(), jsonElement)
     }.onFailure {
         Text(
             text = content,

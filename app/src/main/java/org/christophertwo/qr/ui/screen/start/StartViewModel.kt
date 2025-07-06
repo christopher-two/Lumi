@@ -1,4 +1,4 @@
-package org.christophertwo.qr.ui.screen.generator
+package org.christophertwo.qr.ui.screen.start
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,24 +7,20 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 
-class QrGeneratorViewModel : ViewModel() {
+class StartViewModel : ViewModel() {
 
-    private val _state = MutableStateFlow(QrGeneratorState())
+    private val _state = MutableStateFlow(StartState())
     val state = _state
         .onStart { }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000L),
-            initialValue = QrGeneratorState()
+            initialValue = StartState()
         )
 
-    fun onAction(action: QrGeneratorAction) {
+    fun onAction(action: StartAction) {
         when (action) {
-            is QrGeneratorAction.UpdateContent -> {
-                _state.value = _state.value.copy(
-                    content = action.content
-                )
-            }
+            else -> TODO("Handle actions")
         }
     }
 

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "org.christophertwo.qr"
-        minSdk = 30
+        minSdk = 35
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -75,9 +75,12 @@ dependencies {
     implementation(libs.accompanist.permissions)
 
     //Utils
+    implementation(libs.compose.qr.code)
+
+    //Markdown
     implementation(libs.richtext.ui.material3)
     implementation(libs.richtext.ui)
-    implementation("com.github.jeziellago:compose-markdown:0.2.8")
+    implementation(libs.compose.markdown)
     
     //KotlinX
     implementation(libs.kotlinx.serialization.json)
