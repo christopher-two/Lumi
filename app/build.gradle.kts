@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "org.christophertwo.qr"
-        minSdk = 35
+        minSdk = 30
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -81,7 +81,7 @@ dependencies {
     implementation(libs.richtext.ui.material3)
     implementation(libs.richtext.ui)
     implementation(libs.compose.markdown)
-    
+
     //KotlinX
     implementation(libs.kotlinx.serialization.json)
 

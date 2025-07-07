@@ -11,7 +11,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import org.christophertwo.qr.ui.components.QrAnimationLiquid
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -29,7 +28,7 @@ fun StartRoot(
 @Composable
 fun StartScreen(
     state: StartState,
-    onAction: (StartAction) -> Unit,
+    onAction: (StartAction) -> Unit
 ) {
     val color = colorScheme.primaryContainer
     Scaffold(
@@ -41,9 +40,9 @@ fun StartScreen(
                 itemHorizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
                 content = {
-                    QrAnimationLiquid()
+
                 }
             )
-        },
+        }
     )
 }
