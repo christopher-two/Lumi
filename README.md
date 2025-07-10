@@ -1,10 +1,17 @@
-# Qr App
+# Lumi
 
 <p align="center">
   <img src="Qr.png" alt="Qr" width="200"/>
   <img src="Screen_Generator.png" alt="Screen_Generator" width="200"/>
   <img src="Screen_Scanner.png" alt="Screen_Scanner" width="200"/>
 </p>
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1EUQzQiTkYsfM47KhO-H48OSdgeOZcTen/view?usp=sharing">
+    <img src="https://img.shields.io/badge/Descargar%20App-APK-brightgreen?style=for-the-badge&logo=android" alt="Descargar APK"/>
+  </a>
+</p>
+
 
 Esta es una aplicación de escáner y generador de códigos QR para Android, creada con Jetpack Compose y que utiliza la API de Gemini para la generación avanzada de códigos QR.
 

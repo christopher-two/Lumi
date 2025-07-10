@@ -93,10 +93,8 @@ dependencies {
     implementation(libs.accompanist.permissions)
 
     //Utils
-    implementation(libs.compose.qr.code)
     implementation(libs.qrose)
     implementation(libs.gson)
-    implementation(libs.kottie)
 
     //Markdown
     implementation(libs.richtext.ui.material3)

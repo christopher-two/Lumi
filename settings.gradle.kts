@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Qr"
+rootProject.name = "Lumi"
 include(":app")

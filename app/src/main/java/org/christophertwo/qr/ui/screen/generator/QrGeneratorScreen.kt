@@ -53,17 +53,11 @@ import io.github.alexzhirkevich.qrose.options.roundCorners
 import io.github.alexzhirkevich.qrose.options.solid
 import io.github.alexzhirkevich.qrose.options.square
 import io.github.alexzhirkevich.qrose.rememberQrCodePainter
-import kottieAnimation.KottieAnimation
-import kottieComposition.KottieCompositionSpec
-import kottieComposition.animateKottieCompositionAsState
-import kottieComposition.rememberKottieComposition
-import org.christophertwo.qr.R
 import org.christophertwo.qr.domain.model.QrContentResponse
 import org.christophertwo.qr.ui.components.AnimatedShimmerTextCustom
 import org.christophertwo.qr.ui.components.ModernBackground
 import org.christophertwo.qr.ui.theme.QrTheme
 import org.koin.androidx.compose.koinViewModel
-import utils.KottieConstants
 
 @Composable
 fun QrGeneratorRoot(
