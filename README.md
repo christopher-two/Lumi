@@ -1,5 +1,9 @@
 # Qr App
 
+[Qr](Qr.png)
+[Screen_Generator](Screen_Generator.png)
+[Screen_Scanner](Screen_Scanner.png)
+
 Esta es una aplicación de escáner y generador de códigos QR para Android, creada con Jetpack Compose y que utiliza la API de Gemini para la generación avanzada de códigos QR.
 
 ## Características
