@@ -1,6 +1,7 @@
 package org.christophertwo.qr
 
 import android.app.Application
+import org.christophertwo.qr.di.appModule
 import org.christophertwo.qr.di.repositoryModule
 import org.christophertwo.qr.di.useCaseModule
 import org.christophertwo.qr.di.viewModelModule
@@ -18,7 +19,8 @@ class MainApplication : Application(){
             modules(
                 repositoryModule,
                 useCaseModule,
-                viewModelModule
+                viewModelModule,
+                appModule
             )
         }
     }

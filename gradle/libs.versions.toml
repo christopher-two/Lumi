@@ -5,6 +5,8 @@ barcodeScanning = "17.3.0"
 cameraxVersion = "1.4.2"
 composeMarkdown = "0.2.8"
 composeQrCode = "1.0.1"
+generativeai = "0.9.0"
+gson = "2.11.0"
 kotlin = "2.2.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -18,10 +20,11 @@ lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2025.06.01"
 koin = "4.1.0"
-richtextCommonmark = "0.20.0"
+qrose = "1.0.1"
 richtextUi = "1.0.0-alpha02"
 richtextUiMaterial3 = "0.20.0"
 textRecognition = "16.0.1"
+navigationAndroid = "2.9.0"
 
 [libraries]
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
@@ -34,6 +37,8 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "barcodeScanning" }
 compose-markdown = { module = "com.github.jeziellago:compose-markdown", version.ref = "composeMarkdown" }
 compose-qr-code = { module = "com.lightspark:compose-qr-code", version.ref = "composeQrCode" }
+generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -53,10 +58,11 @@ kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-cor
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
-richtext-commonmark = { module = "com.halilibo.compose-richtext:richtext-commonmark", version.ref = "richtextCommonmark" }
+qrose = { module = "io.github.alexzhirkevich:qrose", version.ref = "qrose" }
 richtext-ui = { module = "com.halilibo.compose-richtext:richtext-ui", version.ref = "richtextUi" }
 richtext-ui-material3 = { module = "com.halilibo.compose-richtext:richtext-ui-material3", version.ref = "richtextUiMaterial3" }
 text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "textRecognition" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

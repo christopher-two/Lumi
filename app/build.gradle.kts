@@ -1,3 +1,15 @@
+// En la parte superior de app/build.gradle.kts
+import java.io.FileInputStream
+import java.util.Properties
+
+// Lee las propiedades del archivo local.properties
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
+}
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -11,12 +23,13 @@ android {
 
     defaultConfig {
         applicationId = "org.christophertwo.qr"
-        minSdk = 30
+        minSdk = 31
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("gemini.key")}\"")
     }
 
     buildTypes {
@@ -37,6 +50,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -76,6 +90,8 @@ dependencies {
 
     //Utils
     implementation(libs.compose.qr.code)
+    implementation(libs.qrose)
+    implementation(libs.gson)
 
     //Markdown
     implementation(libs.richtext.ui.material3)
@@ -84,6 +100,7 @@ dependencies {
 
     //KotlinX
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.navigation.compose)
 
     //Test
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -91,6 +108,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
+    //Gemini
+    implementation(libs.generativeai)
 
     //Debug
     debugImplementation(libs.androidx.ui.tooling)

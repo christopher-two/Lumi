@@ -15,12 +15,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 // --- Definiciones de Colores para el Tema Amarillo (Dark) ---
-private val DarkYellowPrimary = Color(0xFFD4AF37)
-private val DarkOnPrimary = Color(0xFF403000)
+val DarkYellowPrimary = Color(0xFFD4AF37)
+val DarkOnPrimary = Color(0xFF403000)
 private val DarkYellowPrimaryContainer = Color(0xFF5C4400)
 private val DarkOnYellowPrimaryContainer = Color(0xFFF9E08A)
 private val DarkInversePrimary = Color(0xFF785A00)
-private val DarkYellowSecondary = Color(0xFFCDC58E)
+val DarkYellowSecondary = Color(0xFFCDC58E)
 private val DarkOnSecondary = Color(0xFF36311E)
 private val DarkYellowSecondaryContainer = Color(0xFF4D4833)
 private val DarkOnYellowSecondaryContainer = Color(0xFFEAE1A9)
@@ -177,7 +177,7 @@ fun QrTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+        dynamicColor -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context).copy(
                 primary = DarkYellowPrimary,
