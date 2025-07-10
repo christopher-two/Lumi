@@ -29,7 +29,11 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("gemini.key")}\"")
+        buildConfigField(
+            "String",
+            "GEMINI_API_KEY",
+            "\"${localProperties.getProperty("gemini.key")}\""
+        )
     }
 
     buildTypes {
@@ -92,6 +96,7 @@ dependencies {
     implementation(libs.compose.qr.code)
     implementation(libs.qrose)
     implementation(libs.gson)
+    implementation(libs.kottie)
 
     //Markdown
     implementation(libs.richtext.ui.material3)

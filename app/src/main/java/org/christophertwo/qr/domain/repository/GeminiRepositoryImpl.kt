@@ -1,5 +1,6 @@
 package org.christophertwo.qr.domain.repository
 
+import android.content.Context
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
@@ -14,18 +15,21 @@ import org.christophertwo.qr.domain.model.QrContentResponse
  * Esta clase es responsable de construir el prompt, llamar a la API de Gemini,
  * y parsear la respuesta JSON a un modelo de datos Kotlin.
  *
- * @param generativeModel Una instancia del GenerativeModel de Gemini.
  * @param gson Una instancia de Gson para el parseo de JSON.
  */
 class GeminiRepositoryImpl(
-    private val generativeModel: GenerativeModel,
-    private val gson: Gson
+    private val gson: Gson,
+    private val context: Context
 ) : GeminiRepository {
 
     override fun getStructuredQrContent(prompt: String): Flow<Result<QrContentResponse>> = flow {
         try {
             val fullPrompt = buildPrompt(prompt)
-            val response = generativeModel.generateContent(fullPrompt)
+            val response = GenerativeModel(
+                modelName = "gemini-2.0-flash-lite-001",
+                apiKey = context.getSharedPreferences("ApiKey", Context.MODE_PRIVATE)
+                    .getString("gemini_api_key", null) ?: "",
+            ).generateContent(fullPrompt)
 
             val rawText = response.text
             if (rawText.isNullOrBlank()) {

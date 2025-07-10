@@ -53,11 +53,17 @@ import io.github.alexzhirkevich.qrose.options.roundCorners
 import io.github.alexzhirkevich.qrose.options.solid
 import io.github.alexzhirkevich.qrose.options.square
 import io.github.alexzhirkevich.qrose.rememberQrCodePainter
+import kottieAnimation.KottieAnimation
+import kottieComposition.KottieCompositionSpec
+import kottieComposition.animateKottieCompositionAsState
+import kottieComposition.rememberKottieComposition
+import org.christophertwo.qr.R
 import org.christophertwo.qr.domain.model.QrContentResponse
 import org.christophertwo.qr.ui.components.AnimatedShimmerTextCustom
 import org.christophertwo.qr.ui.components.ModernBackground
 import org.christophertwo.qr.ui.theme.QrTheme
 import org.koin.androidx.compose.koinViewModel
+import utils.KottieConstants
 
 @Composable
 fun QrGeneratorRoot(
@@ -98,26 +104,26 @@ private fun QrGeneratorScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Crossfade(
-                    targetState = state,
+                    targetState = state.isLoading,
                     label = "QrContentCrossfade"
-                ) { currentState ->
+                ) { isLoading ->
                     when {
-                        currentState.isLoading -> {
-                            CircularProgressIndicator(modifier = Modifier.size(64.dp))
+                        isLoading -> {
+                            CircularProgressIndicator()
                         }
 
-                        currentState.error != null -> {
+                        state.error != null -> {
                             Text(
-                                text = "Error: ${currentState.error}",
+                                text = "Error: ${state.error}",
                                 color = colorScheme.error,
                                 textAlign = TextAlign.Center
                             )
                         }
 
-                        currentState.finalQrString.isNotBlank() -> {
+                        state.finalQrString.isNotBlank() -> {
                             CardQr(
-                                finalQrString = currentState.finalQrString,
-                                response = currentState.qrResponse
+                                finalQrString = state.finalQrString,
+                                response = state.qrResponse
                             )
                         }
 

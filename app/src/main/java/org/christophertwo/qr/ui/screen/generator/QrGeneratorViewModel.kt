@@ -1,5 +1,6 @@
 package org.christophertwo.qr.ui.screen.generator
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
@@ -35,10 +36,21 @@ class QrGeneratorViewModel(
     }
 
     private fun generateQr(prompt: String) {
+        // Establecer el estado de loading ANTES de hacer la petición
+        _state.update {
+            it.copy(
+                isLoading = true,
+                error = null,
+                finalQrString = "",
+                qrResponse = null
+            )
+        }
+
         viewModelScope.launch {
             geminiRepository.getStructuredQrContent(prompt)
                 .onEach { result ->
-                    _state.update { it.copy(isLoading = true, error = null) }
+                    Log.d("QrGeneratorViewModel", "Received result: $result")
+
                     result
                         .onSuccess { response ->
                             val finalString = processQrData(response)
@@ -46,7 +58,8 @@ class QrGeneratorViewModel(
                                 it.copy(
                                     isLoading = false,
                                     qrResponse = response,
-                                    finalQrString = finalString
+                                    finalQrString = finalString,
+                                    error = null
                                 )
                             }
                         }
@@ -54,7 +67,9 @@ class QrGeneratorViewModel(
                             _state.update {
                                 it.copy(
                                     isLoading = false,
-                                    error = error.message ?: "Ocurrió un error desconocido"
+                                    error = error.message ?: "Ocurrió un error desconocido",
+                                    finalQrString = "",
+                                    qrResponse = null
                                 )
                             }
                         }

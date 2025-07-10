@@ -16,6 +16,7 @@ kotlinxCoroutinesCore = "1.10.2"
 kotlinxCoroutinesAndroid = "1.10.2"
 kotlinxCoroutinesPlayServices = "1.10.2"
 kotlinxSerializationJson = "1.9.0"
+kottie = "2.0.1"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2025.06.01"
@@ -58,6 +59,7 @@ kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-cor
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+kottie = { module = "io.github.ismai117:kottie", version.ref = "kottie" }
 qrose = { module = "io.github.alexzhirkevich:qrose", version.ref = "qrose" }
 richtext-ui = { module = "com.halilibo.compose-richtext:richtext-ui", version.ref = "richtextUi" }
 richtext-ui-material3 = { module = "com.halilibo.compose-richtext:richtext-ui-material3", version.ref = "richtextUiMaterial3" }
