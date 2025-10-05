@@ -1,7 +1,7 @@
 package org.christophertwo.qr.domain.usecase
 
 import androidx.camera.core.ImageProxy
-import org.christophertwo.qr.domain.repository.BarcodeScanningRepository
+import org.christophertwo.qr.data.repository.BarcodeScanningRepository
 
 /**
  * Caso de uso para escanear códigos de barras a partir de un ImageProxy.

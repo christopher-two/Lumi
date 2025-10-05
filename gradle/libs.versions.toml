@@ -1,31 +1,36 @@
 [versions]
 accompanistPermissions = "0.37.3"
-agp = "8.10.1"
+agp = "8.13.0"
 barcodeScanning = "17.3.0"
-cameraxVersion = "1.4.2"
+cameraxVersion = "1.5.0"
 composeMarkdown = "0.2.8"
 composeQrCode = "1.0.1"
 generativeai = "0.9.0"
-gson = "2.11.0"
-kotlin = "2.2.0"
-coreKtx = "1.16.0"
+gson = "2.13.2"
+kotlin = "2.2.20"
+coreKtx = "1.17.0"
 junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
 kotlinxCoroutinesCore = "1.10.2"
 kotlinxCoroutinesAndroid = "1.10.2"
 kotlinxCoroutinesPlayServices = "1.10.2"
 kotlinxSerializationJson = "1.9.0"
-kottie = "2.0.1"
-lifecycleRuntimeKtx = "2.9.1"
-activityCompose = "1.10.1"
-composeBom = "2025.06.01"
-koin = "4.1.0"
+kottie = "2.1.0"
+lifecycleRuntimeKtx = "2.9.4"
+activityCompose = "1.11.0"
+composeBom = "2025.09.01"
+koin = "4.1.1"
 qrose = "1.0.1"
-richtextUi = "1.0.0-alpha02"
+richtextUi = "1.0.0-alpha03"
 richtextUiMaterial3 = "0.20.0"
 textRecognition = "16.0.1"
-navigationAndroid = "2.9.0"
+navigationAndroid = "2.9.5"
+googleGmsGoogleServices = "4.4.3"
+firebaseAuth = "24.0.1"
+credentials = "1.5.0"
+credentialsPlayServicesAuth = "1.5.0"
+googleid = "1.1.1"
 
 [libraries]
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
@@ -65,9 +70,14 @@ richtext-ui = { module = "com.halilibo.compose-richtext:richtext-ui", version.re
 richtext-ui-material3 = { module = "com.halilibo.compose-richtext:richtext-ui-material3", version.ref = "richtextUiMaterial3" }
 text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "textRecognition" }
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationAndroid" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "credentials" }
+androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "credentialsPlayServicesAuth" }
+googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

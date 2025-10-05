@@ -15,6 +15,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     kotlin("plugin.serialization") version "2.2.0"
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -99,11 +100,14 @@ dependencies {
     //Markdown
     implementation(libs.richtext.ui.material3)
     implementation(libs.richtext.ui)
-    implementation(libs.compose.markdown)
 
     //KotlinX
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.navigation.compose)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
 
     //Test
     androidTestImplementation(platform(libs.androidx.compose.bom))

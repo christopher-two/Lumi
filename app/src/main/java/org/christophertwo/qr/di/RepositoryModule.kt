@@ -1,13 +1,15 @@
 package org.christophertwo.qr.di
 
-import org.christophertwo.qr.domain.repository.BarcodeScanningRepository
-import org.christophertwo.qr.domain.repository.BarcodeScanningRepositoryImpl
-import org.christophertwo.qr.domain.repository.GeminiRepository
-import org.christophertwo.qr.domain.repository.GeminiRepositoryImpl
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
+
+// Importar implementaciones desde la capa data
+import org.christophertwo.qr.data.impl.BarcodeScanningRepositoryImpl
+import org.christophertwo.qr.data.impl.GeminiRepositoryImpl
+import org.christophertwo.qr.data.repository.BarcodeScanningRepository
+import org.christophertwo.qr.data.repository.GeminiRepository
 
 val repositoryModule: Module
     get() = module {
