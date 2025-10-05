@@ -1,7 +1,7 @@
 package org.christophertwo.qr.presentation.components
 
 import androidx.compose.runtime.Composable
-import org.christophertwo.qr.core.EnhancedContentType
+import org.christophertwo.qr.core.common.EnhancedContentType
 
 @Composable
 fun EnhancedContentDisplay(

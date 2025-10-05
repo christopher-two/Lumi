@@ -1,5 +1,8 @@
 package org.christophertwo.qr.presentation.screen.start
 
-sealed interface StartAction {
+import androidx.activity.result.ActivityResult
 
+sealed interface StartAction {
+    data object ThemeOnChange : StartAction
+    data class LoginWithGoogle(val result: ActivityResult) : StartAction
 }

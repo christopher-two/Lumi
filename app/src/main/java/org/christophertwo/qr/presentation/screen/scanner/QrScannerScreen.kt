@@ -26,11 +26,10 @@ import com.google.accompanist.permissions.rememberPermissionState
 import org.christophertwo.qr.presentation.components.CameraPreview
 import org.christophertwo.qr.presentation.components.ManagerCamPermissions
 import org.christophertwo.qr.presentation.components.StateContentQr
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun QrScannerRoot(
-    viewModel: QrScannerViewModel = koinViewModel()
+    viewModel: QrScannerViewModel
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     QrScannerScreen(
@@ -140,6 +139,7 @@ private fun QrScannerOverlay(
         )
     }
 }
+
 private fun DrawScope.drawScannerCorners(
     topLeft: Offset,
     size: Size,

@@ -1,55 +1,60 @@
 package org.christophertwo.qr.domain.model
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonElement
 
 /**
  * Representa la estructura completa del JSON devuelto por la IA.
  */
+@Serializable
 data class QrContentResponse(
-    @SerializedName("contenido")
+    @SerialName("contenido")
     val contenido: Contenido,
 
-    @SerializedName("nivel_de_correccion")
-    val nivelDeCorreccion: String,
+    @SerialName("nivel_de_correccion")
+    val nivelDeCorreccion: String = "Q",
 
-    @SerializedName("colores")
+    @SerialName("colores")
     val colores: Colores,
 
-    @SerializedName("estilo")
-    val estilo: String
+    @SerialName("estilo")
+    val estilo: String = "cuadrados"
 )
 
 /**
  * Contenedor para los datos principales del QR, incluyendo su tipo y la data estructurada.
  */
+@Serializable
 data class Contenido(
-    @SerializedName("tipo")
+    @SerialName("tipo")
     val tipo: String,
 
-    // Se usa 'Any' porque la estructura de 'data' es dinámica.
-    // Se debe castear posteriormente según el valor de 'tipo'.
-    @SerializedName("data")
-    val data: Any
+    // Se usa JsonElement porque la estructura de 'data' es dinámica.
+    @SerialName("data")
+    val data: JsonElement
 )
 
 /**
  * Define los colores de fondo y principal del QR.
  */
+@Serializable
 data class Colores(
-    @SerializedName("fondo")
-    val fondo: String,
+    @SerialName("fondo")
+    val fondo: String = "#FFFFFF",
 
-    @SerializedName("principal")
+    @SerialName("principal")
     val principal: Principal
 )
 
 /**
  * Define el color principal, que puede ser un color sólido o un gradiente.
  */
+@Serializable
 data class Principal(
-    @SerializedName("tipo")
-    val tipo: String,
+    @SerialName("tipo")
+    val tipo: String = "solido",
 
-    @SerializedName("valores")
-    val valores: List<String>
+    @SerialName("valores")
+    val valores: List<String> = listOf("#000000")
 )

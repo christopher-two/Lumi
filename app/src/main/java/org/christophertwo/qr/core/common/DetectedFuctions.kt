@@ -1,4 +1,4 @@
-package org.christophertwo.qr.core
+package org.christophertwo.qr.core.common
 
 import kotlinx.serialization.json.Json
 

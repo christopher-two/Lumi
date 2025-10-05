@@ -14,8 +14,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.services)
     kotlin("plugin.serialization") version "2.2.0"
-    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -69,6 +69,17 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.composeIcons.fontAwesome)
+
+    implementation(libs.material.kolor)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.ai)
+    implementation(libs.play.services.auth)
+
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.preferences.core)
 
     //Koin
     implementation(libs.koin.androidx.compose)
@@ -95,7 +106,6 @@ dependencies {
 
     //Utils
     implementation(libs.qrose)
-    implementation(libs.gson)
 
     //Markdown
     implementation(libs.richtext.ui.material3)

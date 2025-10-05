@@ -11,5 +11,7 @@ data class QrGeneratorState(
     // El string final que se codificará en el QR.
     val finalQrString: String = "",
     // Para mostrar mensajes de error en la UI.
-    val error: String? = null
+    val error: String? = null,
+    // Para mostrar mensajes de éxito al descargar
+    val downloadSuccess: String? = null
 )

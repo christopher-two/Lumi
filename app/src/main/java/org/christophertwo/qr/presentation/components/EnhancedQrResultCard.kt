@@ -45,7 +45,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.christophertwo.qr.presentation.screen.scanner.QrScannerAction
 import org.christophertwo.qr.presentation.screen.scanner.QrScannerState
-import org.christophertwo.qr.core.detectEnhancedContentType
+import org.christophertwo.qr.core.common.detectEnhancedContentType
 
 @Composable
 fun EnhancedQrResultCard(

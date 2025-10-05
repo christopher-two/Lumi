@@ -28,7 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.christophertwo.qr.presentation.theme.QrTheme
+import org.christophertwo.qr.core.ui.theme.QrTheme
 
 
 @Composable
@@ -237,7 +237,7 @@ fun ShimmerTextPreview() {
                 verticalArrangement = Arrangement.Center
             ) {
                 AnimatedShimmerTextCustom(
-                    text = "Que generaremos hoy?",
+                    text = "¿Que Generamos?",
                     style = MaterialTheme.typography.bodyMedium
                         .copy(
                             fontSize = 30.sp

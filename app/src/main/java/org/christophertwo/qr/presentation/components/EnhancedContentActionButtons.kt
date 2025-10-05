@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import org.christophertwo.qr.R
-import org.christophertwo.qr.core.EnhancedContentType
+import org.christophertwo.qr.core.common.EnhancedContentType
 
 @Composable
 private fun ActionIconButton(

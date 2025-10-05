@@ -16,12 +16,12 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
-import org.christophertwo.qr.core.formatPhoneNumber
-import org.christophertwo.qr.core.parseEmail
-import org.christophertwo.qr.core.parseLocation
-import org.christophertwo.qr.core.parseSms
-import org.christophertwo.qr.core.parseVCard
-import org.christophertwo.qr.core.parseWiFi
+import org.christophertwo.qr.core.common.formatPhoneNumber
+import org.christophertwo.qr.core.common.parseEmail
+import org.christophertwo.qr.core.common.parseLocation
+import org.christophertwo.qr.core.common.parseSms
+import org.christophertwo.qr.core.common.parseVCard
+import org.christophertwo.qr.core.common.parseWiFi
 
 private val prettyJson = Json { prettyPrint = true }
 
